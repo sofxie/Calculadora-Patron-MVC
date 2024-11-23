@@ -38,6 +38,10 @@ namespace Calculadora_MVC
         {
             _calcula.Primo();
         }
+        public bool Isbinary()
+        {
+            return _calcula.Isbinary();
+        }
         public void Binario()
         {
             _calcula.Binario();

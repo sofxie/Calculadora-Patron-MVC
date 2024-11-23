@@ -25,3 +25,17 @@
 8  Binario  1000
 8  Primo  False
 9  Primo  False
+9  Binario  1001
+9  Primo  False
+9  Primo  False
+8  Binario  1000
+9  Binario  1001
+9  Binario  1001
+9  Binario  1001
+8  Binario  1000
+96  Binario  1100000
+9  Binario  1001
+1741  Primo  True
+8  Binario  1000
+9  Primo  False
+9  Binario  1001

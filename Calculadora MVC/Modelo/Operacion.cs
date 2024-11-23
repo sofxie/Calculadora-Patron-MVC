@@ -162,6 +162,7 @@ namespace Calculadora_MVC.Modelo
         }
         public void Binario()
         {
+            IsBinary = true;
             valores_bin = "";
 
             // Intentar convertir _entradaactual a double
@@ -205,6 +206,10 @@ namespace Calculadora_MVC.Modelo
             {
                 _entradaactual = "ERROR: Entrada no válida.";
             }
+        }
+        public bool Isbinary()
+        {
+            return IsBinary;
         }
         public void AgregarOperacion(string operacion, string entradaactual)
         {

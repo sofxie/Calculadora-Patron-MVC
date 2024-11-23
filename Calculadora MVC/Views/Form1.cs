@@ -41,24 +41,28 @@ namespace Calculadora_MVC
         }
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar)|| ".".Contains(e.KeyChar))
+            bool Binario = controlador.Isbinary();
+            if (textBox.Text != "ERROR" && textBox.Text != "True" && textBox.Text != "False" && !Binario)
             {
-                controlador.AgregarDigito(e.KeyChar.ToString());
+                if (char.IsDigit(e.KeyChar) || ".".Contains(e.KeyChar))
+                {
+                    controlador.AgregarDigito(e.KeyChar.ToString());
+                }
+                else if ("+-*/".Contains(e.KeyChar))
+                {
+                    controlador.AgregarOperacion(e.KeyChar.ToString());
+                }
+                else if ("=".Contains(e.KeyChar))
+                {
+                    controlador.Calcular();
+                }
+                else if ("c".Contains(e.KeyChar) || "C".Contains(e.KeyChar))
+                {
+                    controlador.Clear();
+                }
+                textBox.Text = controlador.EntradaActual();
+                e.Handled = true;
             }
-            else if ("+-*/".Contains(e.KeyChar))
-            {
-                controlador.AgregarOperacion(e.KeyChar.ToString());
-            }
-            else if ("=".Contains(e.KeyChar))
-            {
-                controlador.Calcular();
-            }
-            else if ("c".Contains(e.KeyChar)|| "C".Contains(e.KeyChar))
-            {
-                controlador.Clear();
-            }
-            textBox.Text = controlador.EntradaActual();
-            e.Handled = true; 
         }
         private void BotonOperacion_Click(object sender, EventArgs e)
         {
@@ -71,8 +75,9 @@ namespace Calculadora_MVC
         }
         private void BotonNumero_Click(object sender, EventArgs e)
         {
+            bool Binario = controlador.Isbinary();
             var boton = sender as Button;
-            if (boton != null && textBox.Text != "ERROR" && textBox.Text != "True" && textBox.Text != "False")
+            if (boton != null && textBox.Text != "ERROR" && textBox.Text != "True" && textBox.Text != "False" && Binario != true)
             {
                 // Delegar a la capa de aplicación
                 controlador.AgregarDigito(boton.Text);

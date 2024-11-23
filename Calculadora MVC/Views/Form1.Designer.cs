@@ -64,6 +64,7 @@
             this.buttonIgual.TabIndex = 60;
             this.buttonIgual.Text = "=";
             this.buttonIgual.UseVisualStyleBackColor = false;
+            this.buttonIgual.Click += new System.EventHandler(this.buttonIgual_Click);
             // 
             // buttonRestar
             // 
@@ -100,6 +101,7 @@
             this.button18.TabIndex = 57;
             this.button18.Text = "M+";
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // buttonMultiplicar
             // 
@@ -136,6 +138,7 @@
             this.button15.TabIndex = 54;
             this.button15.Text = "Avg";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // buttonClear
             // 
@@ -148,6 +151,7 @@
             this.buttonClear.TabIndex = 53;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // button2
             // 
@@ -160,6 +164,7 @@
             this.button2.TabIndex = 52;
             this.button2.Text = "DATA";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button23
             // 
@@ -172,6 +177,7 @@
             this.button23.TabIndex = 51;
             this.button23.Text = "PRIMO";
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button14
             // 
@@ -317,6 +323,7 @@
             this.button1.TabIndex = 38;
             this.button1.Text = "BINARIO";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -348,7 +355,7 @@
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculadora MVC";
             this.ResumeLayout(false);
             this.PerformLayout();
 

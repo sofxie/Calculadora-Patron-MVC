@@ -17,6 +17,8 @@ namespace Calculadora_MVC
         {
             InitializeComponent();
             controlador = new Controler();
+            this.KeyPreview = true;
+            this.KeyPress += Form1_KeyPress;
             // Boton de numero de 0-9
             button13.Click += BotonNumero_Click;
             button10.Click += BotonNumero_Click;
@@ -37,6 +39,27 @@ namespace Calculadora_MVC
             buttonRestar.Click += BotonOperacion_Click;
             buttonSumar.Click += BotonOperacion_Click;
         }
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar)|| ".".Contains(e.KeyChar))
+            {
+                controlador.AgregarDigito(e.KeyChar.ToString());
+            }
+            else if ("+-*/".Contains(e.KeyChar))
+            {
+                controlador.AgregarOperacion(e.KeyChar.ToString());
+            }
+            else if ("=".Contains(e.KeyChar))
+            {
+                controlador.Calcular();
+            }
+            else if ("c".Contains(e.KeyChar)|| "C".Contains(e.KeyChar))
+            {
+                controlador.Clear();
+            }
+            textBox.Text = controlador.EntradaActual();
+            e.Handled = true; 
+        }
         private void BotonOperacion_Click(object sender, EventArgs e)
         {
             var boton = sender as Button;
@@ -56,6 +79,44 @@ namespace Calculadora_MVC
                 textBox.Text = controlador.EntradaActual();
             }
         }
+        private void buttonIgual_Click(object sender, EventArgs e)
+        {
+            controlador.Calcular();
+            textBox.Text = controlador.EntradaActual();
+        }
 
+        private void button23_Click(object sender, EventArgs e)
+        {
+            controlador.Primo();
+            textBox.Text = controlador.EntradaActual();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            controlador.Binario();
+            textBox.Text = controlador.EntradaActual();
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            controlador.Clear();
+            textBox.Text = controlador.EntradaActual();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            controlador.GuardarMemoria();
+            textBox.Text = controlador.EntradaActual();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            controlador.MostrarHistorial();
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            controlador.Avg();
+            textBox.Text = controlador.EntradaActual();
+        }
     }
 }

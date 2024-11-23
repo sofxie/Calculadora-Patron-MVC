@@ -1,1 +1,27 @@
-﻿
+﻿9  Primo  False
+18  Primo  False
+95  Binario  1011111
+6  Binario  110
+9 M+  = 9
+6 M+  = 9, 6
+6 M+  = 6
+9 M+  = 6, 9
+3 M+  = 6, 9, 3
+6 Avg  = 6, 9, 3
+6 Avg  = 6, 9, 3
+9 M+  = 9
+6 M+  = 9, 6
+3 M+  = 9, 6, 3
+6 Avg  = 9, 6, 3
+6  Primo  False
+9  Binario  1001
+7  Primo  True
+5  Binario  101
+2.3  Primo  False
+8.3 M+  = 8.3
+9 M+  = 8.3, 9
+42 M+  = 8.3, 9, 42
+19.7666666666667 Avg  = 8.3, 9, 42
+8  Binario  1000
+8  Primo  False
+9  Primo  False

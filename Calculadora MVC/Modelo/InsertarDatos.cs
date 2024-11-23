@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Calculadora_MVC.Modelo;
 
 namespace Calculadora_MVC
 {
     public class InsertarDatos
     {
-        private readonly Controler _controlador;
-        private string _entradaactual = "";
+        public string _entradaactual;
         public InsertarDatos()
         {
-            _controlador = new Controler();
+            _entradaactual = string.Empty;
         }
-        public string AgregarDigito(string digit)
+        
+        public string EntradaActual()
         {
-            if (digit == "." && _entradaactual.Contains("."))
-            {
-                return None;
-            }
-            _entradaactual += digit;
             return _entradaactual;
         }
     }

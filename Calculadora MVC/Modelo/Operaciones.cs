@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculadora_MVC
 {
-    public class Operacioness
+    public class Operaciones
     {
         public double Num1 { get; set; }
         public string Operacion { get; set; }
